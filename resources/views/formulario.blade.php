@@ -75,7 +75,7 @@
                                           <option value="" selected>-- Selecione --</option>
                                           @foreach($funcao as $E)
                                                 <!-- M.Santos onchange -->
-                                                <option value="{{$E->id}}" @if(old('id_funcao_cargo')==$E->id) {{'selected="selected"'}} @endif>{{$E->nome}}</option>
+                                                <option value=""></option>
                                           @endforeach
                                       </select>
                                   </div>

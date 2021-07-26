@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profiles', 'ProfilesController@indexProfiles');
+Route::get('/profiles', 'ProfilesController@index');
+Route::get('/candidato/criar', 'CandidatoController@create');
+Route::store('/candidato/criar', 'CandidatoController@strore');

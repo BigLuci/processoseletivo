@@ -24,8 +24,8 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        $candidato = Profile::all();
-        return view('formulario', compact ('candidato'));
+        /*$candidato = Profile::all();
+        return view('formulario', compact ('candidato'));*/
     }
 
     /**

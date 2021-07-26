@@ -12,11 +12,12 @@ class EstadoCivil extends Model
         'name'
     ];
 
-    public $rules = [
+    /*public $rules = [
         'name' => 'required'
     ];
 
     public $message = [
         'name.required' => 'O campo estado civil é obrigatório'
-    ];
+    ];*/
+    
 }
