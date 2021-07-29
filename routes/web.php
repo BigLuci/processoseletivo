@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/profiles', 'ProfilesController@index');
 Route::get('/candidato/criar', 'CandidatoController@create');
-Route::store('/candidato/criar', 'CandidatoController@strore');
+// Route::store('/candidato/criar', 'CandidatoController@store');

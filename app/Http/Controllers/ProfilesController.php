@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FuncaoCargo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -12,9 +13,13 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexProfiles()
+    public function index()
     {
-        return view('formulario');
+        $funcao = FuncaoCargo::orderBy('id')
+        ->get();
+
+        return view('formulario', compact('funcao')
+    );
     }
 
     /**

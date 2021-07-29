@@ -15,6 +15,7 @@ class CreateCargoProcessosTable extends Migration
     {
         Schema::create('cargo_processos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

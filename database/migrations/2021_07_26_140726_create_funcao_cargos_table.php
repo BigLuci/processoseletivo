@@ -15,7 +15,8 @@ class CreateFuncaoCargosTable extends Migration
     {
         Schema::create('funcao_cargos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('cargo_processo_id');
+            $table->string('name');
+            $table->bigInteger('cargo_processo_id')->unsigned();
             $table->foreign('cargo_processo_id')
                 ->references('id')
                 ->on('cargo_processos');

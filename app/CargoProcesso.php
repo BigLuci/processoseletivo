@@ -9,7 +9,7 @@ class CargoProcesso extends Model
     protected $table = 'cargo_processos';
 
     protected $fillable = [
-        'nome'
+        'name'
     ];
 
     public function funcao_cargo()
