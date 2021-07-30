@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\CargoProcesso;
+use App\Escolaridade;
 use App\FuncaoCargo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
-class ProfilesController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +20,22 @@ class ProfilesController extends Controller
         $funcao = FuncaoCargo::orderBy('id')
         ->get();
 
-        return view('formulario', compact('funcao')
+        return view('profiles.formulario', compact('funcao')
+    );
+        $escola = Escolaridade::orderBy('id')
+        ->get();
+
+        return view('profiles.formulario', compact('escola')
+    );
+    }
+
+    public function inicio()
+    {
+        $cargo = CargoProcesso::orderBy('id')
+        ->get();
+
+
+        return view('inicio', compact('cargo')
     );
     }
 
@@ -27,10 +44,23 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        /*$candidato = Profile::all();
-        return view('formulario', compact ('candidato'));*/
+
+    //     $profile = Profile::all();
+    //    // $specialNeeds = SpecialNeed::all();
+    //     $cpf = $request->cpf;
+
+
+    //     if ($request->cargo_processo==1){
+    //         return view('profiles.formulario',['profile'=> $profile,
+    //          'cpf'=>$cpf,
+    //          'cargo_processo'=>$request->cargo_processo]);
+    //     }else{
+    //         //$contratado = 0;
+    //     }
+
+
     }
 
     /**
