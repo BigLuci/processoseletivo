@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CargoProcesso;
 use App\Escolaridade;
 use App\FuncaoCargo;
+use App\Sexo;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -17,16 +18,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $funcao = FuncaoCargo::orderBy('id')
-        ->get();
+        $funcao = FuncaoCargo::orderBy('id') ->get();
+        $escola = Escolaridade::orderBy('id')->get();
 
-        return view('profiles.formulario', compact('funcao')
-    );
-        $escola = Escolaridade::orderBy('id')
-        ->get();
+        return view('profiles.formulario', compact('funcao','escola'));
 
-        return view('profiles.formulario', compact('escola')
-    );
     }
 
     public function inicio()
@@ -46,6 +42,18 @@ class ProfileController extends Controller
      */
     public function create(Request $request)
     {
+        $cargo = $request->cargo_processo;
+        $funcao=FuncaoCargo::where('cargo_processo_id','=',$cargo)->get();
+
+        // if ($cargo == $funcao->cargo_processo_id) {
+
+        // }
+
+        // se cargo igual a um entao chama funcoes
+        $sexo = Sexo::all();
+        $escola = Escolaridade::all();
+        $cpf = $request->cpf;
+        return view('profiles.formulario', compact('cpf','funcao','escola', 'sexo'));
 
     //     $profile = Profile::all();
     //    // $specialNeeds = SpecialNeed::all();
@@ -71,7 +79,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cpf = $request->input('cfp');
     }
 
     /**

@@ -5,7 +5,7 @@
             <img src="{{asset ('img/banner_principal.jpg') }}">
         </div>
         <div class="conteudo" style="margin-left: 10px;">
-        <form action="" method="get">
+        <form action="{{ route ('profile.create') }}" method="get">
             {{ csrf_field() }}
             <div class="row">
                 <div class="centraliza">

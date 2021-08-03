@@ -13,8 +13,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::resource('/profile',ProfileController::class);
+
 Route::get('/', 'ProfileController@inicio');
-Route::get('/profile', 'ProfileController@index');
-// Route::get('/profile', 'ProfileController@create');
-Route::get('/candidato/criar', 'CandidatoController@create');
-// Route::store('/candidato/criar', 'CandidatoController@store');
+// Route::get('/profile', 'ProfileController@index');
+// Route::put('/profile', 'ProfileController@store');
+// // Route::get('/profile', 'ProfileController@create');
+// Route::get('/candidato/criar', 'CandidatoController@create');
+// // Route::store('/candidato/criar', 'CandidatoController@store');

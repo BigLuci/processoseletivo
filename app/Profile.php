@@ -38,7 +38,7 @@ class Profile extends Model
         'experiencia_2',
         'meses_2',
         'experiencia_3',
-        'meses_3',
+        'meses_3' 
 		// 'numero_inscricao',
 
     ];
